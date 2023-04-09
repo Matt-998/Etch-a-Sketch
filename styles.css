@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(125deg, rgb(231, 182, 182), rgb(238, 49, 143));
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  border: 2px solid black;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  animation-name: shadow;
+  animation-duration: 5s;
+  animation: shadow 2s ease-in-out infinite;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0 0 0 2px;
+  }
+  50% {
+    box-shadow: 0 0 0 10px;
+  }
+  100% {
+    box-shadow: 0 0 0 2px;
+  }
+}
+
+.square {
+  flex: 1;
+  height: auto;
+  background-color: white;
+  border: 1px solid black;
+  animation: square 2s ease-in-out infinite;
+}
+
+@keyframes square {
+  0% {
+    box-shadow: 0 0 0 2px;
+  }
+  50% {
+    box-shadow: 0 0 0 7px;
+  }
+  100% {
+    box-shadow: 0 0 0 2px;
+  }
+}
+
+.square:before {
+  padding-top: 100%;
+  display: block;
+  content: "";
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
