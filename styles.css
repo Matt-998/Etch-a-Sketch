@@ -8,7 +8,7 @@ body {
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 5%;
   align-items: center;
 }
 
@@ -48,7 +48,7 @@ body {
     box-shadow: 0 0 0 2px;
   }
   50% {
-    box-shadow: 0 0 0 7px;
+    box-shadow: 0 0 0 4px;
   }
   100% {
     box-shadow: 0 0 0 2px;
