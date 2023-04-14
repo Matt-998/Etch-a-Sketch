@@ -1,18 +1,20 @@
-let container = document.getElementById("container");
-let slider = document.getElementById("range");
-let sliderValue = document.getElementById("sliderValue");
-let reset = document.getElementById("reset");
-let black = document.getElementById("black");
-let white = document.getElementById("white");
-let cold = document.getElementById("cold");
-let warm = document.getElementById("warm");
+const container = document.getElementById("gridContainer");
+const slider = document.getElementById("range");
+const sliderValue = document.getElementById("sliderValue");
+const reset = document.getElementById("reset");
+const black = document.getElementById("black");
+const white = document.getElementById("white");
+const cold = document.getElementById("cold");
+const warm = document.getElementById("warm");
+const buttonGroup = document.getElementById("buttonContainer");
 
+let prevButton = null;
 let grid = slider.value;
-sliderValue.textContent = slider.value;
+sliderValue.textContent = `GRID SIZE: ${slider.value}`;
 let colourSelect = "random";
 
 slider.oninput = function () {
-  sliderValue.textContent = this.value;
+  sliderValue.textContent = `GRID SIZE: ${this.value}`;
   grid = this.value;
   generateGrid(grid);
 };
@@ -26,11 +28,11 @@ warm.addEventListener("click", function () {
   addColour();
 });
 black.addEventListener("click", function () {
-  colourSelect = "black";
+  colourSelect = "transparent";
   addColour();
 });
 white.addEventListener("click", function () {
-  colourSelect = "white";
+  colourSelect = "#cccbcb";
   addColour();
 });
 
@@ -38,6 +40,9 @@ reset.addEventListener("click", function () {
   generateGrid(grid);
   addColour();
 });
+
+buttonGroup.addEventListener("click", buttonSelected);
+
 generateGrid(grid);
 
 function removeAllChildren(parent) {
@@ -74,18 +79,24 @@ function addColour() {
         square.style.backgroundColor = getRandomColdColour();
       } else if (colourSelect === "warm") {
         square.style.backgroundColor = getRandomWarmColour();
-      } else if (colourSelect === "black") {
-        square.style.backgroundColor = "black";
+      } else if (colourSelect === "transparent") {
+        square.style.backgroundColor = "transparent";
       } else {
-        square.style.backgroundColor = "white";
+        square.style.backgroundColor = "#cccbcb";
       }
     });
   }
 }
 
-// function getRandomNumber(maxNum) {
-//   return Math.floor(Math.random() * maxNum);
-// }
+function buttonSelected(e) {
+  if (e.target.nodeName === "BUTTON") {
+    e.target.classList.add("buttonSelected");
+    if (prevButton !== null) {
+      prevButton.classList.remove("buttonSelected");
+    }
+    prevButton = e.target;
+  }
+}
 
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;

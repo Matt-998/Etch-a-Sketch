@@ -10,17 +10,21 @@
   </head>
   <body>
     <h1>Etch-a-Sketch</h1>
-    <div class="buttonContainer">
-      <button id="reset">Reset</button>
-      <button id="black">Black</button>
-      <button id="white">White</button>
-      <button id="cold">Cold</button>
-      <button id="warm">Warm</button>
-      <div class="sliderContainer">
-        <input type="range" min="2" max="30" value="15" id="range" />
-        <div id="sliderValue"></div>
+    <div class="mainContainer">
+      <div id="buttonContainer">
+        <button id="black">OPAQUE</button>
+        <button id="white">ERASER</button>
+        <button id="cold">COLD</button>
+        <button id="warm">WARM</button>
       </div>
+      <div class="buttonContainer2">
+        <button id="reset">RESET</button>
+        <div class="sliderContainer">
+          <input type="range" min="2" max="30" value="15" id="range" />
+          <div id="sliderValue"></div>
+        </div>
+      </div>
+      <div id="gridContainer"></div>
     </div>
-    <div id="container"></div>
   </body>
 </html>
