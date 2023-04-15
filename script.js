@@ -51,6 +51,7 @@ function removeAllChildren(parent) {
   }
 }
 
+// Adds squares one by one into a flexbox grid
 function generateGrid(grid) {
   removeAllChildren(container);
   let output = grid * grid;

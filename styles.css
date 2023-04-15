@@ -1,85 +1,118 @@
 * {
-  box-sizing: border-box;
+  /*Typography stuff*/
   font-family: Arial, Helvetica, sans-serif;
+  /*Miscellaneous*/
+  box-sizing: border-box;
 }
 
 body {
-  background: linear-gradient(125deg, rgb(231, 182, 182), rgb(238, 49, 143));
-  height: 100vh;
-  overflow-y: hidden;
+  /*Display stuff*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  /*Box model stuff*/
+  height: 100vh;
+  background: linear-gradient(125deg, rgb(231, 182, 182), rgb(238, 49, 143));
+  /*Miscellaneous*/
+  overflow-y: hidden;
 }
 
 h1 {
-  color: white;
+  /*Box model stuff*/
+  margin: 50px 0 30px 0;
+  /*Typography stuff*/
   font-size: 60px;
   text-shadow: 4px 4px black;
-  margin: 50px 0 30px 0;
+  color: white;
 }
 
 .mainContainer {
-  font-size: 16px;
-  font-weight: 900;
+  /*Display stuff*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  /*Typography stuff*/
+  font-size: 16px;
+  font-weight: 900;
+  /*Miscellaneous*/
   gap: 10px;
 }
 
 button {
-  font-size: 16px;
-  font-weight: 900;
+  /*Box model stuff*/
   width: 125px;
   height: 48px;
   padding: 10px 30px;
   border: 3px solid black;
   border-radius: 10px;
+  /*Typography stuff*/
+  font-size: 16px;
+  font-weight: 900;
   text-align: center;
 }
 
 button:hover {
+  /*Box model stuff*/
   border: 3px solid #686868;
+  /*Manipulations stuff*/
+  transform: scale(1.03);
+}
+
+button:active {
+  /*Manipulations stuff*/
+  transform: scale(0.97);
 }
 
 #buttonContainer {
+  /*Display stuff*/
   display: flex;
+  /*Miscellaneous*/
   gap: 10px;
 }
 
 .buttonContainer2 {
-  margin-bottom: 30px;
+  /*Display stuff*/
   display: flex;
+  /*Box model stuff*/
+  margin-bottom: 30px;
+  /*Miscellaneous*/
   gap: 10px;
 }
 
 .sliderContainer {
-  width: 150px;
-  background-color: buttonface;
-  border: 3px solid black;
-  border-radius: 10px;
+  /*Display stuff*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  /*Box model stuff*/
+  width: 150px;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: buttonface;
 }
 
 .buttonSelected {
+  /*Miscellaneous*/
   box-shadow: 0 0 25px rgb(238, 255, 82);
 }
 
 #gridContainer {
-  width: 500px;
-  height: 500px;
+  /*Display stuff*/
   display: flex;
   flex-wrap: wrap;
+  /*Box model stuff*/
+  width: 500px;
+  height: 500px;
 }
 
 .square {
+  /*Display stuff*/
   flex: 1;
+  /*Box model stuff*/
   height: auto;
-  background-color: #cccbcb;
   border: 1px solid transparent;
+  background-color: #cccbcb;
+  /*Manipulations stuff*/
   animation: shadow 2s ease-in-out infinite;
 }
 
@@ -96,12 +129,42 @@ button:hover {
 }
 
 .square:before {
-  padding-top: 100%;
-  display: block;
+  /*Display stuff*/
   content: "";
+  display: block;
+  /*Box model stuff*/
+  padding-top: 100%;
 }
 
 .break {
+  /*Display stuff*/
   flex-basis: 100%;
+  /*Box model stuff*/
   height: 0;
+}
+
+.footer {
+  /*Box model stuff*/
+  margin-top: 45px;
+  /*Typography stuff*/
+  color: white;
+}
+
+a {
+  /*Display stuff*/
+  display: inline-block;
+  /*Box model stuff*/
+  margin-left: 15px;
+  /*Typography stuff*/
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  /*Typography stuff*/
+  text-decoration: underline;
+  /*Manipulations stuff*/
+  filter: invert(1);
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
 }
